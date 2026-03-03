@@ -156,7 +156,7 @@ const MyWallet: React.FC = () => {
                                 ? <TrendingUpIcon sx={{ fontSize: '14px !important' }} />
                                 : <TrendingDownIcon sx={{ fontSize: '14px !important' }} />
                               }
-                              label={formatPercentage(Math.abs(coin.price_change_percentage_24h))}
+                              label={formatPercentage(coin.price_change_percentage_24h)}
                               size="small"
                               sx={{
                                 fontWeight: 700,
