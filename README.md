@@ -1,46 +1,119 @@
-# Getting Started with Create React App
+# CryptoTrack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A live cryptocurrency price tracker built with React, TypeScript, and Redux Toolkit.
 
-## Available Scripts
+**Live Demo:** [https://crypto-tracker-ec108.web.app](https://crypto-tracker-ec108.web.app)
 
-In the project directory, you can run:
+**Figma Design File:** [View UI Designs on Figma](https://figma.com/your-link-here)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Running Locally
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+Before you start make sure you have the following installed:
+- [Node.js v18+](https://nodejs.org)
+- [Git](https://git-scm.com)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Steps
+```bash
+# 1. Clone the repository
+git clone https://github.com/VinceTaku/crypto-tracker.git
 
-### `npm run build`
+# 2. Navigate into the project folder
+cd crypto-tracker
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# 3. Install dependencies
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 4. Create your environment file
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Create a `.env` file in the root folder and add your CoinGecko API key:
+```
+REACT_APP_COINGECKO_API_KEY=your_key_here
+```
 
-### `npm run eject`
+Get a free API key at [coingecko.com/en/api](https://coingecko.com/en/api)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> The app works without an API key but may hit rate limits.
+> If you see a rate limit warning, wait 30 seconds and click Retry.
+```bash
+# 5. Start the development server
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The app will open at **http://localhost:3000**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Tech Stack
 
-## Learn More
+- React 18 + TypeScript
+- Redux Toolkit — state management and caching
+- React Router v6 — client-side routing
+- MUI (Material UI v7) — Material Design 3 components
+- Axios — HTTP requests to CoinGecko API
+- Chart.js — interactive historical price charts
+- Firebase Hosting — production deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Features
+
+- Top cryptocurrencies ranked by market cap with infinite scroll
+- Coin detail page — price, market cap, supply, ATH, sentiment, developer data
+- Historical price charts — 24H, 7D, 1M, 1Y with price, market cap and volume
+- Currency switcher — ZAR, USD, EUR, GBP, BTC, ETH
+- Redux caching — 60 second cache to minimise API calls
+- MetaMask wallet integration with live token prices
+- Progressive Web App — installable on mobile and desktop
+- Fully responsive — mobile, tablet and desktop
+- Skeleton loaders and error states throughout
+
+---
+
+## Project Structure
+```
+src/
+├── components/    # Reusable UI components
+├── pages/         # Dashboard, CoinDetail, MyWallet
+├── store/         # Redux slices and store config
+├── services/      # CoinGecko API calls
+├── hooks/         # Custom React hooks
+├── utils/         # Formatters and cache helper
+└── types/         # TypeScript interfaces
+```
+
+---
+
+## MetaMask
+
+The My Wallet page requires the MetaMask browser extension.
+
+1. Install from [Chrome Web Store](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn) or [metamask.io](https://metamask.io)
+2. Create or import a wallet
+3. Go to **My Wallet** in the app and click **Connect Wallet**
+
+We only read your wallet address. We never request your private keys or sign any transactions.
+
+---
+
+## API Notes
+
+This app uses the [CoinGecko API](https://www.coingecko.com/en/api) free tier.
+
+- No API key required for basic usage
+- Add a free API key to `.env` for a higher rate limit
+- If you see a rate limit warning, wait 30 seconds and click Retry
+
+---
+
+## Deployment
+```bash
+npm run build
+firebase deploy
+```
+
+**Live App:** [https://crypto-tracker-ec108.web.app](https://crypto-tracker-ec108.web.app)
