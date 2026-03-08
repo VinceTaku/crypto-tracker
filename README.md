@@ -4,7 +4,7 @@ A live cryptocurrency price tracker built with React, TypeScript, and Redux Tool
 
 **Live Demo:** [https://crypto-tracker-ec108.web.app](https://crypto-tracker-ec108.web.app)
 
-**Figma Design File:** [View UI Designs on Figma](https://figma.com/your-link-here)
+**Figma Design File:** [View UI Designs on Figma](https://www.figma.com/design/E1k4aR93UIYWQrPPBpuWPr/Crypo-Track-UI?node-id=8605-3&p=f&t=GXkx3anBSbtei8J4-0)
 
 ---
 
